@@ -52,4 +52,16 @@ class Owner
     end
   end
 
+  def list_pets
+    "I have #{pets[:dogs].length} dogs, and #{pets[:cats].length} cats"
+  end
+
+  def sell_pets
+    pets.each do |pet, arr|
+      arr.map do |pet|
+        pet.mood = "nervous"
+      end
+      arr.clear
+    end
+  end
 end
