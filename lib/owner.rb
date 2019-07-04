@@ -33,20 +33,20 @@ class Owner
 
   def buy_cat(name)
     cat = Cat.new(name)
-    pets[:cats] << cat
+    @pets[:cats] << cat
   end
 
   def buy_dog(name)
     dog = Dog.new(name)
-    pets[:dogs] << dog
+    @pets[:dogs] << dog
   end
 
   def walk_dogs
-    pets[:dogs].map {|dog| dog.mood = "happy"}
+    @pets[:dogs].map {|dog| dog.mood = "happy"}
   end
 
   def play_with_cats
-    pets[:cats].map {|cat| cat.mood = "happy"}
+    @pets[:cats].map {|cat| cat.mood = "happy"}
   end
 
   def list_pets
@@ -54,9 +54,9 @@ class Owner
   end
 
   def sell_pets
-    pets.each do |type, pets|
+    @pets.each do |type, pets|
       pets.map {|pet| pet.mood = "nervous"}
     end
-    pets.clear
+    @pets.clear
   end
 end
