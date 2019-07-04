@@ -36,5 +36,5 @@ class Owner
     @@pets[:cats] << Cat.new(cat)
   end
 
-  
+
 end
